@@ -5,7 +5,7 @@ https://johannesmp.github.io/CS261_Assignment4_LoginPage/
 
 # An example login page for CS261 Assigment 4
 
-To make implementing the login requirement of Assignment 4 a bit easier, you may use this boilerplace form build with [twitter bootstrap](http://getbootstrap.com/) and [jQuery](https://jquery.com/) with a form [validation plugin](https://jqueryvalidation.org/).
+To make implementing the login requirement of Assignment 4 a bit easier, you may use this boilerplate http form build with [twitter bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/) and a [jQuery validation plugin](https://jqueryvalidation.org/).
 
 If you plan on using it, the files from this repo should be hosted on the root of your loadBalancer instance.
 
