@@ -45,9 +45,9 @@ define(function(require) {
       dummyAPICall("login_api_path", data, function(ret) {
 
         // Example if API call returned success
-        ret.status = "success";
-
-        // We udpate status panel to show success
+        ret.demo_status = "success";
+        
+        // We update status panel to show success
         setStatus(ret, 'success');
       });
     }
@@ -58,7 +58,7 @@ define(function(require) {
       dummyAPICall("create_api_path", data, function(ret) {
 
         // Example if API call returned error
-        ret.status = "error";
+        ret.demo_status = "error";
 
         // We update status panel to show problem
         setStatus(ret, 'danger');
@@ -73,7 +73,10 @@ define(function(require) {
 
       // a fake callback. this should be your jQuery ajax call instead
       setTimeout( function() {
-        callback({'return_demo' : 'returned by demo path: ' + path});
+        callback( {
+          demo_data : data,
+          demo_return : 'returned by demo path: ' + path
+        });
       }, 500);
     }
   };
