@@ -5,7 +5,7 @@ https://johannesmp.github.io/CS261_Assignment4_LoginPage/
 
 # An example login page for CS261 Assigment 4
 
-To make implementing the login requirement of Assignment 4 a bit easier, you may use this boilerplate http form build with [twitter bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/) and a [jQuery validation plugin](https://jqueryvalidation.org/).
+To make implementing the login requirement of Assignment 4 a bit easier, you may use this boilerplate http form built with [twitter bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/) and a [jQuery validation plugin](https://jqueryvalidation.org/).
 
 If you plan on using it, the files from this repo should be hosted on the root of your loadBalancer instance.
 
@@ -28,7 +28,7 @@ Finally, upon logging in, the user should be redirected to the game page.
 
 You only need to modify `/static/scripts/main.js`. 
 
-`/index.html`, `/static/scripts/form.js` and `/static/scripts/status.js` don't need to be touched unless you are feeling adventurous
+`/index.html`, `/static/scripts/form.js` and `/static/scripts/status.js` don't need to be touched unless you are feeling adventurous.
 
 In main.js:
 
