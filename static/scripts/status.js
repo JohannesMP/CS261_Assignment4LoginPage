@@ -10,6 +10,13 @@ define(function(require) {
     form = formObj;
   }
 
+  // Grab Status Panel
+  var statusPanel = $('#status-panel');
+  // Grab Progress bar
+  var progressBar = statusPanel.find('#progress-bar');
+  // Grab Reply Content
+  var replyContent = statusPanel.find("#reply-content");
+
   // Private: shows status panel when called for the first time
   function initStatus() {
     statusPanel.removeClass("force-collapse");
@@ -17,7 +24,7 @@ define(function(require) {
   }
 
   function showProgress() {
-
+    progressBar.removeClass("force-collapse");
   }
 
   function hideProgress() {
@@ -50,24 +57,22 @@ define(function(require) {
     replyContent.addClass("info");
   }
 
-  status.setStatus = function(msg, status) {
+  status.setStatus = function(msg, status, lockButtons) {
     initStatus();
 
     hideProgress();
-    form.setButtonsEnable(true);
+
+    if(!lockButtons)
+      form.setButtonsEnable(true);
+    else
+      form.setButtonsEnable(false);
+
     setMsg(msg);
 
     clearReplyClass();
 
     replyContent.addClass(status);
   }
-
-  // Grab Status Panel
-  var statusPanel = $('#status-panel');
-  // Grab Progress bar
-  var progressBar = statusPanel.find('#progress-bar');
-  // Grab Reply Content
-  var replyContent = statusPanel.find("#reply-content");
 
   return status;
 });
