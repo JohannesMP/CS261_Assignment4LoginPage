@@ -26,7 +26,7 @@ Example ajax call:
     $.ajax({
         type: 'POST',
         url: '/some_path/',
-        data: '{'some' : 'data'}', // or JSON.stringify ({'some' : 'data'}),
+        data: '{some : data}', // or JSON.stringify ({some : data}),
         success: function(data) { /* Handle data reply here */ },
         contentType: "application/json",
         dataType: 'json'
