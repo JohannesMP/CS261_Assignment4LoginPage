@@ -17,9 +17,9 @@ You will want to configure your nginx configuration to accomplish the following:
 
 # To Implement
 
-Clicking the `Create` and `Login` should query your API and the server's reply should be displayed in the on-screen status panel.
+Once a username and password have been provided, the `Create` and `Login` buttons should query your API and the server's reply should be displayed in the on-screen status panel.
 
-A user should be able to first click 'Create' with an unused username and password, then (if they wish) immediately click 'login' to receive their session and token.
+A user should be able to first click 'Create' with an unused username and password, then (if they wish) immediately click 'Login' to receive their session and token (assuming the information they provided was valid).
 
 Finally, upon logging in, the user should be redirected to the game page.
 
@@ -38,25 +38,27 @@ In main.js:
 
 Example ajax call:
 
-    var options = {
-        type: 'POST',
-        url: '/your/api/path/',
-        data: '{some : data}', // or JSON.stringify ({some : data}),
-        contentType: "application/json",
-        dataType: 'json'
-    };
+```javascript
+var options = {
+    type: 'POST',
+    url: '/your/api/path/',
+    data: '{some : data}', // or JSON.stringify ({some : data}),
+    contentType: "application/json",
+    dataType: 'json'
+};
 
-    // .done and .fail both accept callbacks 
-    
-    $.ajax(options)
-    // got AJAX reply from server
-    .done(function(reply) {
-        // do something with 'reply' object
-    })
-    // AJAX ERROR (like if your url 404's, etc)
-    .fail(function(error) {
-        // do something with 'error' object
-    });
+// .done and .fail both accept callbacks 
+
+$.ajax(options)
+// got AJAX reply from server
+.done(function(reply) {
+    // do something with 'reply' object
+})
+// AJAX ERROR (like if your url 404's, etc)
+.fail(function(error) {
+    // do something with 'error' object
+});
+```
  
 See http://api.jquery.com/jquery.ajax/ for more info.
  
@@ -66,6 +68,31 @@ Once the user has clicked 'login' with a valid existing username/password, the s
  
 You can redirect the user's browser simply setting the `window.location.href` variable to the `<url>?<querystring>`. So when a user logs in they should be redirected to `https://user-name.cs261.net/Game/?_session=SESSION&_token=TOKEN`, allowing them to play the game.
 
+To verify that the login query was completed successfully, delay the redirection by a few seconds so the server's reply is visible.
+
+For example, you could do something like this:
+
+```javascript
+// assume 'msg' contains the server's success reply
+if(config.openGameOnLogin) {
+  var redirectMsg = msg + "\n\nRedirecting to Game in ";
+
+  var timer = 0;
+  if(config.openGameDelay != undefined);
+    timer = config.openGameDelay;
+
+  var tickRate = 100; // update every 1/10 of a second
+  var countdown = setInterval( function() {
+    timer -= tickRate;
+    if(timer < 0) {
+      clearInterval(countdown);
+      redirectToGame();
+    } else {
+      setStatus(redirectMsg + (timer/1000) + " seconds", "success");
+    }
+  }, tickRate);
+}
+```
  
 
  
