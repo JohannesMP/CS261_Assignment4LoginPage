@@ -104,7 +104,7 @@ if(config.openGameOnLogin) {
 
 ---------
 
-To clarify, here is a gif of the full range of behavior that your login screen should exhibit:
+To clarify, here is a gif of the full range of behavior that your login screen should exhibit _(ignoring that this is running on localhost:8080, that the game page is a placeholder)_:
 
 ![](http://i.imgur.com/sE9wiM1.gif)
  
