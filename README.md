@@ -73,7 +73,7 @@ You can redirect the user's browser simply setting the `window.location.href` va
 
 To verify that the login query was completed successfully, delay the redirection by a few seconds so the server's reply is visible.
 
-For example, you could use [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) to create a countdown:
+For example, you could use [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) to display a countdown before redirecting:
 
 ```javascript
 // assume 'msg' contains the server's success reply.
