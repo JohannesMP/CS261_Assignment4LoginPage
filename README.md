@@ -5,7 +5,7 @@ https://johannesmp.github.io/CS261_Assignment4_LoginPage/
 
 # An example login page for CS261 Assigment 4
 
-To make implementing the login requirement of Assignment 4 a bit easier, you may use this boilerplace form.
+To make implementing the login requirement of Assignment 4 a bit easier, you may use this boilerplace form build with [twitter bootstrap](http://getbootstrap.com/) and [jQuery](https://jquery.com/) with a form [validation plugin](https://jqueryvalidation.org/).
 
 If you plan on using it, the files from this repo should be hosted on the root of your loadBalancer instance.
 
@@ -33,7 +33,7 @@ You only need to modify `/static/scripts/main.js`.
 In main.js:
 
 - The functions `doCreate(data) {...}` and `doLogin(data){...}` are currently called when the user clicks the `Create` or `Submit` button, using the contents of the form. The form is auto-validating to be non-empty. You do not need to validate the input.
-- A placeholder `dummyAPICall` function is currently used in `doLogin` and `doCreate`. This should be replaced with a proper jquery json API call to your server, the reply of which should be displayed in the on-screen status panel.
+- A placeholder `dummyAPICall` function is currently used in `doLogin` and `doCreate`. This should be replaced with a proper jQuery json API call to your server, the reply of which should be displayed in the on-screen status panel.
 - See the current usage of `setLoading(msg)` and `setStatus(msg, status)` calls in `dummyAPICall`. Your implementation should exhibit similarly responsive behavior.
 
 Example ajax call:
@@ -47,7 +47,7 @@ var options = {
     dataType: 'json'
 };
 
-// .done and .fail both accept callbacks 
+// .done and .fail chain on the ajax call, and both accept callbacks 
 
 $.ajax(options)
 // got AJAX reply from server
@@ -62,6 +62,7 @@ $.ajax(options)
  
 See http://api.jquery.com/jquery.ajax/ for more info.
  
+ 
 ## 2. Redirect to game
  
 Once the user has clicked 'login' with a valid existing username/password, the server will return a session/token. With this token you can then redirect the user to the game page, which should be located at `user-name.cs261.net/Game/`
@@ -70,7 +71,7 @@ You can redirect the user's browser simply setting the `window.location.href` va
 
 To verify that the login query was completed successfully, delay the redirection by a few seconds so the server's reply is visible.
 
-For example, you could do something like this:
+For example, you could use [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) to create a countdown:
 
 ```javascript
 // assume 'msg' contains the server's success reply.
