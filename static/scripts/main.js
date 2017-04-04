@@ -69,15 +69,15 @@ define(function(require) {
     // TODO: replace with actual API call function that calls $.ajax(options)
     function dummyAPICall(path, data, callback) {
       // Set status to 'loading' while we wait
-      setLoading("Pretending to waiting for API Call...");
+      setLoading("Pretending to wait for API Call...");
 
-      // a fake callback. this should be your jQuery ajax call instead
+      // A fake callback. This should be your jQuery ajax call instead
       setTimeout( function() {
         callback( {
           demo_data : data,
           demo_return : 'returned by demo path: ' + path
         });
-      }, 1000);
+      }, 3000);
     }
   };
 });
