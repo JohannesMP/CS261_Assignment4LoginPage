@@ -5,7 +5,7 @@ define(function(require) {
 
 
     // Do Not Modify
-    requirejs(["/static/scripts/form.js", "/static/scripts/status.js"], function(form, status) {
+    requirejs(["./static/scripts/form.js", "./static/scripts/status.js"], function(form, status) {
       // let the status UI know about the form UI
       status.registerForm(form);
 
