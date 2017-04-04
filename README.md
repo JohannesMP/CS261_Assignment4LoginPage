@@ -7,25 +7,28 @@ https://johannesmp.github.io/CS261_Assignment4_LoginPage/
 
 This data should be hosted on the root of your loadBalancer instance.
 
-Configure your nginx configuration to accomlish the following:
+Configure your nginx configuration to accomplish the following:
 
-- accessing user-name.cs261.net/index.html should resolve to the `index.html` in this repo.
-- user-name.cs261.net/static/styles.css should resolve to the `styles.css` file in the `/static/` directory in this repo
-
-and so on.
+- `user-name.cs261.net/index.html` should resolve to the `index.html` in this repo.
+- `user-name.cs261.net/static/styles.css` should resolve to the `styles.css` file in the `/static/` directory in this repo
 
 
 # To Implement
 
-## AJAX API Calls
+- Clicking the `Create` and `Login` should query your API and the server's reply should be displayed in the on-screen status panel.
 
-You only need to modify `/static/scripts/main.js`
 
-`doLogin(data) {...}` and `doCreate(data){...}` are currently called when the user clicks the 'create' or 'submit' button, using the contents of the form. The form is auto-validating to be non-empty.
+## 1. AJAX API Calls
 
-A placeholder `dummyAPICall` function is currently used in `doLogin` and `doCreate`. This should be replaced with the appropriate jquery ajax call.
+You only need to modify `/static/scripts/main.js`. 
 
-You should replace dummYAPICall with a real function that wraps a jquery json ajax post request.
+`/index.html`, `/static/scripts/form.js` and `/static/scripts/status.js` don't need to be touched unless you are feeling adventurous
+
+In main.js:
+
+- The functions `doCreate(data) {...}` and `doLogin(data){...}` are currently called when the user clicks the `Create` or `Submit` button, using the contents of the form. The form is auto-validating to be non-empty. You do not need to validate the input.
+- A placeholder `dummyAPICall` function is currently used in `doLogin` and `doCreate`. This should be replaced with a proper jquery json API call to your server, the reply of which should be displayed in the on-screen status panel.
+- See the current usage of `setLoading(msg)` and `setStatus(msg, status)` calls in `dummyAPICall`. Your implementation should exhibit similarly responsive behavior.
 
 Example ajax call:
 
@@ -49,12 +52,15 @@ Example ajax call:
         // do something with 'error' object
     });
  
- See http://api.jquery.com/jquery.ajax/ for more info.
+See http://api.jquery.com/jquery.ajax/ for more info.
  
- ## Redirect to game
+## 2. Redirect to game
  
- Once the user has clicked 'login' with an existing username, the server will return a session/token.
+Once the user has clicked 'login' with a valid existing username/password, the server will return a session/token. With this token you can then redirect the user to the game page, which should be located at `user-name.cs261.net/Game/`
  
- You can redirect the user's browser simply setting the `window.location.href` variable to the `<url>?<querystring>`
+You can redirect the user's browser simply setting the `window.location.href` variable to the `<url>?<querystring>`. So when a user logs in they should be redirected to `https://user-name.cs261.net/Game/?_session=SESSION&_token=TOKEN`, allowing them to play the game.
+
+ 
+
  
  
