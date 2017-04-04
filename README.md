@@ -3,7 +3,7 @@ https://johannesmp.github.io/CS261_Assignment4_LoginPage/
 
 
 
-# An example login page for CS261 Assigment 4's login page
+# An example login page for CS261 Assigment 4
 
 This data should be hosted on the root of your loadBalancer instance.
 
