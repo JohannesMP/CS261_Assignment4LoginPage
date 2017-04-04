@@ -23,13 +23,24 @@ You should replace dummYAPICall with a real function that wraps a jquery json aj
 
 Example ajax call:
 
-    $.ajax({
+    var options = {
         type: 'POST',
-        url: '/some_path/',
+        url: '/your/api/path/',
         data: '{some : data}', // or JSON.stringify ({some : data}),
-        success: function(data) { /* Handle data reply here */ },
         contentType: "application/json",
         dataType: 'json'
+    };
+
+    // .done and .fail both accept callbacks 
+    
+    $.ajax(options)
+    // got AJAX reply from server
+    .done(function(reply) {
+        // do something with 'reply' object
+    })
+    // AJAX ERROR (like if your url 404's, etc)
+    .fail(function(error) {
+        // do something with 'error' object
     });
  
  See http://api.jquery.com/jquery.ajax/ for more info.
