@@ -1,3 +1,8 @@
+View this page live at:
+https://johannesmp.github.io/CS261_Assignment4LoginPage/
+
+
+
 # An example login page for CS261 Assigment 4's login page
 
 This data should be hosted on the root of your loadBalancer instance.
@@ -10,7 +15,7 @@ Configure your nginx configuration to accomlish the following:
 and so on.
 
 
-# To Implement:
+## To Implement:
 
 You only need to modify `/static/scripts/main.js`
 
