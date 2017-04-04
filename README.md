@@ -102,5 +102,10 @@ if(config.openGameOnLogin) {
 ```
  
 
+---------
+
+To clarify, here is a gif of the full range of behavior that your login screen should exhibit:
+
+![](http://i.imgur.com/sE9wiM1.gif)
  
  
