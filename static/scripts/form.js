@@ -45,10 +45,15 @@ define(function(require) {
   // Expose ability for status to enable/disable buttons
   form.setButtonsEnable = setButtonsEnable;
 
+  function isFormValid() {
+    return userForm.validate().checkForm();
+  }
+
+  form.isFormValid = isFormValid;
+
   // enable/disable buttons based on form validation
   function handleButtonEnable() {
-    var formIsValid = userForm.validate().checkForm();
-    setButtonsEnable(formIsValid);
+    setButtonsEnable(isFormValid());
   }
 
   function updateValidation(element, event) {
@@ -66,13 +71,13 @@ define(function(require) {
   // Listen to clicks on buttons in our form
   userFormButtons.click(function(event) {
     // button pressed
-    var action = event.target.name
+    var action = event.target.name;
 
     // Form data
     var data = {};
     $.each(userForm.serializeArray(), function(index, el) { data[el.name] = el.value} );
 
-    console.log("Form submitted with action '" + action + "' and data '" + JSON.stringify(data));
+    console.log("Form submitted with action '" + action + "' and data '" + JSON.stringify(data)) + "'";
     formCallback(action, data);
   });
 

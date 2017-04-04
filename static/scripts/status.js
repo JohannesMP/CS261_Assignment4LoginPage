@@ -17,16 +17,19 @@ define(function(require) {
   // Grab Reply Content
   var replyContent = statusPanel.find("#reply-content");
 
+
   // Private: shows status panel when called for the first time
   function initStatus() {
     statusPanel.removeClass("force-collapse");
     statusPanel.find('*').removeClass("force-collapse");
   }
 
+  // Private: show the progress bar in the status panel
   function showProgress() {
     progressBar.removeClass("force-collapse");
   }
 
+  // Private: Hide the Progress bar in the status panel
   function hideProgress() {
     progressBar.addClass("force-collapse");
   }
@@ -44,33 +47,36 @@ define(function(require) {
     replyContent.removeClass("active success info danger warning");
   }
 
-
+  // Update the status panel when loading (locks buttons by default)
   status.setLoading = function(msg) {
     initStatus();
 
     showProgress();
-    form.setButtonsEnable(false);
+    if(form)
+      form.setButtonsEnable(false);
     setMsg(msg);
 
     clearReplyClass();
-
     replyContent.addClass("info");
   }
 
+  // Upadte the status with a new status (unlocks buttons by default)
   status.setStatus = function(msg, status, lockButtons) {
     initStatus();
 
     hideProgress();
 
-    if(!lockButtons)
-      form.setButtonsEnable(true);
-    else
-      form.setButtonsEnable(false);
+    if(form)
+    {
+      if(!lockButtons && form.isFormValid())
+        form.setButtonsEnable(true);
+      else
+        form.setButtonsEnable(false);
+    }
 
     setMsg(msg);
 
     clearReplyClass();
-
     replyContent.addClass(status);
   }
 
