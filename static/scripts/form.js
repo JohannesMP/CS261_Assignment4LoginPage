@@ -72,7 +72,7 @@ define(function(require) {
     var data = {};
     $.each(userForm.serializeArray(), function(index, el) { data[el.name] = el.value} );
 
-    console.log("Form submitted with action '" + action "' and data " + JSON.stringify(data));
+    console.log("Form submitted with action '" + action + "' and data '" + JSON.stringify(data));
     formCallback(action, data);
   });
 
