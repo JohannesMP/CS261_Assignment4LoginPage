@@ -74,46 +74,6 @@ define(function(require) {
 
     console.log("Form submitted with action '" + action "' and data " + JSON.stringify(data));
     formCallback(action, data);
-
-    /*
-    if(action == "create")
-      doUserCreate(data);
-    else if(action == "login")
-      doUserLogin(data, function(reply) {
-        if(reply.status == "success")
-        {
-          sessionData._session = reply.data.session;
-          sessionData._token = reply.data.token;
-
-          console.log(sessionData);
-
-          if(config.openGameOnLogin)
-          {
-            var msg = replyContent.html();
-            var redirectMsg = msg + "\n\n Redirecting to Game in ";
-
-            var timer = 0;
-            if(config.openGameDelay != undefined);
-              timer = config.openGameDelay;
-
-            var tickRate = 100; // update every 1/10 of a second
-            var countdown = setInterval( function() {
-              timer -= tickRate;
-              if(timer < 0)
-              {
-                clearInterval(countdown);
-                replyContent.html(msg);
-                redirectToGame();
-              }
-              else
-              {
-                replyContent.html(redirectMsg + (timer/1000) + " seconds");
-              }
-            }, tickRate);
-          }
-        }
-      });
-    */
   });
 
   return form;
