@@ -5,17 +5,23 @@ https://johannesmp.github.io/CS261_Assignment4_LoginPage/
 
 # An example login page for CS261 Assigment 4
 
-This data should be hosted on the root of your loadBalancer instance.
+To make implementing the login requirement of Assignment 4 a bit easier, you may use this boilerplace form.
 
-Configure your nginx configuration to accomplish the following:
+If you plan on using it, the files from this repo should be hosted on the root of your loadBalancer instance.
+
+You will want to configure your nginx configuration to accomplish the following:
 
 - `user-name.cs261.net/index.html` should resolve to the `index.html` in this repo.
-- `user-name.cs261.net/static/styles.css` should resolve to the `styles.css` file in the `/static/` directory in this repo
+- `user-name.cs261.net/static/styles.css` should resolve to the `styles.css` file in the `/static/` directory in this repo. All files in /static/ should be accessible by appending the path to your server's domain.
 
 
 # To Implement
 
-- Clicking the `Create` and `Login` should query your API and the server's reply should be displayed in the on-screen status panel.
+Clicking the `Create` and `Login` should query your API and the server's reply should be displayed in the on-screen status panel.
+
+A user should be able to first click 'Create' with an unused username and password, then (if they wish) immediately click 'login' to receive their session and token.
+
+Finally, upon logging in, the user should be redirected to the game page.
 
 
 ## 1. AJAX API Calls
