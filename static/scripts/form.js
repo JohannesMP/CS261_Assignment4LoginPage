@@ -37,7 +37,6 @@ define(function(require) {
   });
 
   function setButtonsEnable(enabled) {
-    console.log("BUTTONS ENABLE: " + enabled);
     userFormButtons.each(function(index, element) { 
       $(element).prop("disabled", !enabled); 
     });
@@ -73,6 +72,7 @@ define(function(require) {
     var data = {};
     $.each(userForm.serializeArray(), function(index, el) { data[el.name] = el.value} );
 
+    console.log("Form submitted with action '" + action "' and data " + JSON.stringify(data));
     formCallback(action, data);
 
     /*
