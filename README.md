@@ -12,7 +12,7 @@ If you plan on using it, the files from this repo should be hosted on the root o
 You will want to configure your nginx configuration to accomplish the following:
 
 - `user-name.cs261.net/index.html` should resolve to the `index.html` in this repo.
-- `user-name.cs261.net/static/styles.css` should resolve to the `styles.css` file in the `/static/` directory in this repo. All files in /static/ should be accessible by appending the path to your server's domain.
+- `user-name.cs261.net/static/styles.css` should resolve to the `styles.css` file in the `/static/` directory in this repo. All files in `/static/` should be accessible by appending their path to your server's domain.
 
 
 # To Implement
