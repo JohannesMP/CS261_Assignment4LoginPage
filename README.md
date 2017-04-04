@@ -42,7 +42,7 @@ Example ajax call:
 var options = {
     type: 'POST',
     url: '/your/api/path/',
-    data: '{some : data}', // or JSON.stringify ({some : data}),
+    data: '{"some" : "data"}', // or JSON.stringify ({some : data}),
     contentType: "application/json",
     dataType: 'json'
 };
