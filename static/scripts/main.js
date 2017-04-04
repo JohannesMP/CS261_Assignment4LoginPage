@@ -77,7 +77,7 @@ define(function(require) {
           demo_data : data,
           demo_return : 'returned by demo path: ' + path
         });
-      }, 3000);
+      }, 2000);
     }
   };
 });
