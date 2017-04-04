@@ -73,7 +73,10 @@ To verify that the login query was completed successfully, delay the redirection
 For example, you could do something like this:
 
 ```javascript
-// assume 'msg' contains the server's success reply
+// assume 'msg' contains the server's success reply.
+// assume 'redirectToGame()' is implemented to update window.location.href appropriately.
+// assume 'config.openGameOnLogin' and 'config.openGameDelay' are passed into main via index.html's bottom-most script tag.
+
 if(config.openGameOnLogin) {
   var redirectMsg = msg + "\n\nRedirecting to Game in ";
 
