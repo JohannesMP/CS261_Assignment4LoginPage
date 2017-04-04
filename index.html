@@ -108,18 +108,20 @@
     </div><!-- container -->
     
     <script>
-      // Once jQuery is ready
+
+      // Some Example options that get passed into main as its 'config' variable.
+      // You are welcome to modify these as your API requires
+      var options = {
+        openGameOnLogin: true,
+        openGameDelay: 3000,
+        gamePath: "/Game/",
+        // etcs
+      }
+
+      // Once jQuery is ready, we can start running main
       $(function() {
         requirejs(["static/scripts/main.js"], function(main) {
-          main({
-            openGameOnLogin: true,
-            openGameDelay: 3000, // in miliseconds
-            gamePath: "/Game/",
-
-            // POTENTIAL DEBUGGING OPTIONS:
-            //forceAPIProtocol: "https",
-            forceURLapi: "http://192.168.56.1:7000",
-          });
+          main(options);
         });
       });
     </script>

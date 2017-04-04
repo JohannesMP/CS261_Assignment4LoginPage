@@ -3,7 +3,6 @@ define(function(require) {
   return function(config) {
     // feel free to use config to pass in variables used in your API calls
 
-
     // Do Not Modify
     requirejs(["./static/scripts/form.js", "./static/scripts/status.js"], function(form, status) {
       // let the status UI know about the form UI

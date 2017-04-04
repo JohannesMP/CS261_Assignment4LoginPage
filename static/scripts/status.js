@@ -1,6 +1,9 @@
+// CS261 Student: you shouldn't need to touch this file
+
 define(function(require) {
   var status = {};
 
+  // to interact with form elements
   var form;
 
   status.registerForm = function(formObj) {
