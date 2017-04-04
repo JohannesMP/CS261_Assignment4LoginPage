@@ -60,7 +60,9 @@ $.ajax(options)
 });
 ```
  
-See http://api.jquery.com/jquery.ajax/ for more info.
+ You may want to wrap this call in a helper `APICall` function that takes the place of the current `dummyAPICall`.
+ 
+See http://api.jquery.com/jquery.ajax/ for documentation on jquery's ajax functionality.
  
  
 ## 2. Redirect to game
