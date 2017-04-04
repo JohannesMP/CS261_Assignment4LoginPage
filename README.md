@@ -94,7 +94,8 @@ if(config.openGameOnLogin) {
       clearInterval(countdown);
       redirectToGame();
     } else {
-      setStatus(redirectMsg + (timer/1000) + " seconds", "success");
+      // setStatus arg3 = true disables buttons during countdown
+      setStatus(redirectMsg + (timer/1000) + " seconds", "success", true);
     }
   }, tickRate);
 }
