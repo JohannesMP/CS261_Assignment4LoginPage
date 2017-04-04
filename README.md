@@ -78,7 +78,7 @@ For example, you could use [setInterval](https://developer.mozilla.org/en-US/doc
 ```javascript
 // assume 'msg' contains the server's success reply.
 // assume 'redirectToGame()' is implemented to update window.location.href appropriately.
-// assume 'config.openGameOnLogin' and 'config.openGameDelay' are passed into main via index.html's bottom-most script tag.
+// assume 'config.openGameOnLogin' and 'config.openGameDelay' are passed into main via index.html.
 
 if(config.openGameOnLogin) {
   var redirectMsg = msg + "\n\nRedirecting to Game in ";
